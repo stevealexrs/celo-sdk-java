@@ -7,12 +7,23 @@ public class AccountBalance {
     public final BigInteger cUSD;
     public final BigInteger lockedCELO;
     public final BigInteger pending;
+    public final BigInteger cEUR;
+    public final BigInteger cBRL;
 
-    public AccountBalance(BigInteger CELO, BigInteger cUSD, BigInteger lockedCELO, BigInteger pending) {
+    public AccountBalance(
+            BigInteger CELO,
+            BigInteger cUSD,
+            BigInteger lockedCELO,
+            BigInteger pending,
+            BigInteger cEUR,
+            BigInteger cBRL
+    ) {
         this.CELO = CELO;
         this.cUSD = cUSD;
         this.lockedCELO = lockedCELO;
         this.pending = pending;
+        this.cEUR = cEUR;
+        this.cBRL = cBRL;
     }
 
     static class Builder {
@@ -20,6 +31,8 @@ public class AccountBalance {
         private BigInteger cUSD;
         private BigInteger lockedCELO;
         private BigInteger pending;
+        private BigInteger cEUR;
+        private BigInteger cBRL;
 
         public Builder setCELO(BigInteger celo) {
             this.celo = celo;
@@ -41,8 +54,18 @@ public class AccountBalance {
             return this;
         }
 
+        public Builder setcEUR(BigInteger cEUR) {
+            this.cEUR = cEUR;
+            return this;
+        }
+
+        public Builder setcBRL(BigInteger cBRL) {
+            this.cBRL = cBRL;
+            return this;
+        }
+
         public AccountBalance createAccountBalance() {
-            return new AccountBalance(celo, cUSD, lockedCELO, pending);
+            return new AccountBalance(celo, cUSD, lockedCELO, pending, cEUR, cBRL);
         }
     }
 }

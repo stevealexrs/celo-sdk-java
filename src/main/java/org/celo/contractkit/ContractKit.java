@@ -7,6 +7,8 @@ import org.celo.contractkit.protocol.CeloTransactionManager;
 import org.celo.contractkit.wrapper.GasPriceMinimumWrapper;
 import org.celo.contractkit.wrapper.GoldTokenWrapper;
 import org.celo.contractkit.wrapper.LockedGoldWrapper;
+import org.celo.contractkit.wrapper.StableTokenBRLWrapper;
+import org.celo.contractkit.wrapper.StableTokenEURWrapper;
 import org.celo.contractkit.wrapper.StableTokenWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -79,6 +81,8 @@ public class ContractKit {
         GoldTokenWrapper celoToken = contracts.getGoldToken();
         StableTokenWrapper stableToken = contracts.getStableToken();
         LockedGoldWrapper lockedCelo = contracts.getLockedGold();
+        StableTokenEURWrapper stableTokenEUR = contracts.getStableTokenEUR();
+        StableTokenBRLWrapper stableTokenBRL = contracts.getStableTokenBRL();
 
         BigInteger pending = BigInteger.ZERO;
         try {

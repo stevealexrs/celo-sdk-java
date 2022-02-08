@@ -22,6 +22,8 @@ public enum CeloContract {
     Reserve,
     SortedOracles,
     StableToken,
+    StableTokenEUR,
+    StableTokenBRL,
     TransferWhitelist,
     Validators,
 }
